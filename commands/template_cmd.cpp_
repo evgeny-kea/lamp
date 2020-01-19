@@ -1,0 +1,28 @@
+#include "template_cmd.h"
+#include "../lamp.h"
+
+#define KEY_ 0x // place here your cmd number
+
+TmplCmd::TmplCmd ()
+{
+}
+
+bool TmplCmd::check_length (const Length& len) const
+{
+    return len == ; // define your data length restrictions
+}
+
+void TmplCmd::exec (Lamp* lamp)
+{
+    // place your command implementation here
+}
+
+namespace
+{
+    Command::Ptr Create ()
+    {
+        return Command::Ptr (new TmplCmd ());
+    }
+
+    const bool registered = Command::Factory::Instance ().Register (KEY_, &Create);
+}

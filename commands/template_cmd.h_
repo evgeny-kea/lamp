@@ -1,0 +1,14 @@
+#ifndef TMPL_CMD_H
+#define TMPL_CMD_H
+
+#include "../command.h"
+
+class TmplCmd : public Command
+{
+public:
+    TmplCmd ();
+    bool check_length (const Length&) const;
+    void exec (Lamp*);
+};
+
+#endif // TMPL_CMD_H
